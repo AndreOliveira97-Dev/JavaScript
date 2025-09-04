@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
@@ -20,6 +20,9 @@
             Converter <b>de:</b>
             <select>
                 <option>R$: Real brasileiro</option>
+                <option value="dolar">U$: Dólar</option>
+                <option value="euro">€: Euro</option>
+                <option value="libra">£: Libra</option>
             </select>
         </label><br>
 
@@ -27,10 +30,10 @@
             <b>Para:</b>
             <select class="select">
                 <option value="dolar">U$: Dólar</option>
-                <option value="real">R$: <b>Real brasileiro</b></option>
                 <option value="euro">€: Euro</option>
                 <option value="libra">£: Libra</option>
-                <option value="biticoin">BTC: Bitcoin</option>
+                <option value="real">R$: <b>Real brasileiro</b></option>
+                </option>
             </select>
         </label>
 
@@ -39,17 +42,17 @@
             <input placeholder="10.000,00" class="entered-value">
         </label>
 
-        <button class="convert-button" >Converter</button>
+        <button class="convert-button">Converter</button>
 
         <section>
             <div class="conversion-box">
                 <img src="./assets/brasil 2.png" alt="Bandeira-Brasil">
-                <p class="coin">Real</p>
+                <p class="coin">Real brasileiro</p>
                 <p class="real-value"> R$: 0,00</p>
             </div>
             <img src="./assets/Computador assistência técnica comprar monitor novo azul e roxo - story do Instagram redes sociais.png"
                 class="conversor">
-            <div class="conversion-box">
+            <div class="converted-box">
                 <img src="./assets/estados-unidos (1) 1.png" alt="Bandeira-EUA" class="currency-img">
                 <p class="coin" id="currency-name">Dólar americano</p>
                 <p class="result">U$: 0.00</p>
@@ -57,7 +60,7 @@
         </section>
     </main>
 
-<script src="./arquivo.js"></script>
+    <script src="./arquivo.js"></script>
 
 </body>
 

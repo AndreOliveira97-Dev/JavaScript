@@ -7,11 +7,11 @@ function buttonClicked() {     // quando essa função for charamada, ela vai ex
     const enteredValue = document.querySelector(".entered-value").value   // ela vai pegar o input digitado
     const realValue = document.querySelector(".real-value")   // aqui ela guardou o valor digitado 
     const result = document.querySelector(".result")   // aqui ela guardou o valor convertido 
-
+    
 
     const dollarValue = 5.45  // valor do real
     const euroValue = 6.35    // valor do dolar 
-
+    const libraValue = 7.31   // valor da libra 
 
      if (select.value == "dolar") {   // se o valor no meu menu de seleçaõ, for igual a opção "dolar"
         result.innerHTML = new Intl.NumberFormat("en-US", {
@@ -28,8 +28,24 @@ function buttonClicked() {     // quando essa função for charamada, ela vai ex
         }).format(enteredValue / euroValue)     // o resultado sera o valor digitado no input dividido pelo euro 
     }
 
+    if (select.value == "libra") {   // se o valor no meu menu de seleçaõ, for igual a opção "libra"
+        result.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",                                    //vamos formatar o valor no formato da libra 
+            currency: "GBP"
+        }).format(enteredValue / libraValue)  // o resultado sera o valor digitado no input dividido pelo valor da libra. 
+    }
 
 
+    if (select.value == "real") {   // se o valor no meu menu de seleçaõ, for igual a opção "libra"
+        result.innerHTML = new Intl.NumberFormat("pt-BR", {
+            style: "currency",                                    //vamos formatar o valor no formato da libra 
+            currency: "BRL"
+        }).format(enteredValue)  // o resultado sera o valor digitado no input dividido pelo valor da libra. 
+    }
+
+
+
+    
     realValue.innerHTML = new Intl.NumberFormat("pt-BR", {   // aqui estamos formatando a moeda no formato do real brasileiro 
         style: "currency",
         currency: "BRL"
@@ -55,6 +71,25 @@ function exchangedCurrency() {      // quando essa função for chamada ela vai,
         currencyName.innerHTML = "Euro"  // eu troco atravéz do "innerHTML" para o nome "euro"
         currencyImg.src ="./assets/Design sem nome 3.png"  // e troco a iimagem para e moeda do euro 
     }
+
+
+    if(select.value == "libra"){   // se a opção selecionada no meu menu de seleção for igual a libra
+        currencyName.innerHTML = "Libra"  // eu troco atravéz do "innerHTML" para o nome "libra"
+        currencyImg.src ="./assets/a0fa5b993223b56d3c95277c822d9484d1bc9757.png" // e troco a iimagem para e moeda da libra
+        currencyImg.style.width = "50px";   // ajuste o tamanho como quiser, ja que nesse caso estava muito grande. 
+        currencyImg.style.height = "50px";   
+    }
+
+
+    if( select.value == "real") {
+        currencyName.innerHTML ="Real brasileiro"
+        currencyImg.src = "./assets/brasil 2.png"
+    }
+
+
+
+
+
 
     buttonClicked() // aqui eu trouxe a funçao de trocar o valor, ja feita la em cima, para quando trocar a moeda, ja fazer a converção automaticamente.
                                // sem precisar clicar no botão "converter"
